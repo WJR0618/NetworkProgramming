@@ -1,0 +1,133 @@
+.content {
+    margin-top: 100px; /*navBar height 60px */
+    width: 80%;
+    height: 800px;
+    display: flex;
+    color: white ;
+    font-size: 20px;
+    justify-content: space-around;
+}
+.left{
+    width: 18%;
+    height: 300px;
+    background-color:rgba(27, 27, 27, 0.562);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.left > a {
+    width: 100%;
+    text-align: center;
+    transition: 0.2s;
+    text-decoration: none;
+}
+.left > a:hover {
+    background: rgba(255, 187, 0, 0.849);
+    color: black;
+}
+.left > a:last-child {
+    background: rgba(255, 187, 0, 0.849);
+    color: black;
+}
+.left > a > p{
+    margin: 5px 0 ;
+    line-height: 30px;
+    font-size: 20px;
+    cursor: pointer;
+    outline: none;
+    color: whitesmoke;
+    letter-spacing: 3px;
+}
+.right{
+    width: 75%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: rgba(68, 68, 68, 0.479);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+.right-content{
+    display: flex;
+    width: 100%;
+    margin: 40px;
+    flex-direction: column;
+    align-items: center;
+}
+.buy-content{
+    position: relative;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    /* background-color: blueviolet; */
+    margin: 10px 40px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 187, 0, 0.849);
+}
+.buy-content > div:nth-child(1) {
+    height: 50px;
+    /* background-color: greenyellow; */
+    align-items: center;
+}
+.buy-content > div:nth-child(2) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 300px;
+    /* background-color: rgb(69, 19, 126); */
+    
+}
+.buy-content > div:nth-child(3) {
+    height: 50px;
+    width: 230px;
+    /* background-color: rgb(255, 231, 47); */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.buy-content > div:nth-child(4) {
+    height: 50px;
+    width: 70px;
+    /* background-color: rgb(143, 29, 55); */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.payout{
+    font-size: 20px;
+    display: flex;
+    position: absolute;
+
+    right: 100px;
+    bottom: 50px;
+    color: white;
+}
+.payout > div{
+    margin: auto 10px;
+    padding: 0 20px;
+    border-right: 2px solid orange;
+}
+.pay-btn {
+    display: flex; 
+    justify-content: center;
+    color: rgb(255, 187, 0);
+    outline: none;
+    border: 1px solid;
+    border-radius: 5px;
+    background-color: transparent;
+    width: 100px;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 5px 10px;
+    margin: 0 20px;
+    transition: 0.2s ease;
+    cursor: pointer;
+}
+.pay-btn:hover {
+    background-color: rgba(255, 187, 0, 0.904);
+    color: black;
+}

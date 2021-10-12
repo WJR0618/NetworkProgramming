@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>星球販賣所</title>
+    <link rel="stylesheet" href="css/main.css"> <!-- navBar & footer-->
+    <link rel="stylesheet" href="css/member.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script> <!--符號引用-->
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script> // CART add .product block
+        var test = '<div class="cartProduct"> \
+                <div> \
+                    <img src="image/tianwang.jpg" class="icon-product"> \
+                </div> \
+                <div> \
+                    <p>天王星</p> \
+                </div> \
+                <div> \
+                    <p>300萬</p> \
+                </div> \
+                <div> \
+                    <span class="del-product">&times</span> \
+                </div> \
+            </div>' ;
+       
+        $(document).ready(function(){
+            $("#add").click(function(event){ 
+                $("#formBox").append( test ); 
+                event.preventDefault() ;
+            })
+        });
+    </script>
+    <script>
+        var a = document.getElementsByTagName("input") ;
+        var btn = document.getElementsByClassName("modify") ;
+        function change() {
+            for ( var i = 0 ; i < a.length ; i ++ ) {
+                a[i].disabled = false ;
+            }
+            
+            a[15].className = "modify" ;
+            
+            
+           
+        }
+        $(document).ready(function(){
+            $("#btn-change").click(function(event){ 
+                event.preventDefault() ;
+            })
+        })
+    </script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="navBar">
+            <ul>
+                <li><a href="index.html">星球販賣所</a></li>
+                <li><a id="logSignModalBtn"><img class="icon" src='image/tianwang.jpg'></a></li> <!-- 登入後id改href="self.html"-->
+                <li><a id="cartModalBtn"><i class="icon fas fa-shopping-cart"></i></a></li>
+                <li class="search-box">
+                    <input class="search-txt" type="text" name="" placeholder="Type to search">
+                    <a class="search-btn" href="#"><i class="icon fa fa-search"></i></a>
+                </li>
+                <li><a href="intro.html">Contact Us</a></li>
+            </ul>
+        </div>
+
+        <!-- (Log in / Sign up) Modal -->
+        <div id="logSignModal" class="modal">
+            <!-- Modal content -->
+            <div class="form-box">
+                <span id="close">&times;</span>
+                <div class="button-box">
+                    <div id="btn"></div>
+                    <button type="button" id="toggle-btnL" class="toggle-btn" onclick="login()">Log in</button>
+                    <button type="button" id="toggle-btnR" class="toggle-btn" onclick="signup()">Sign up</button>
+                </div>
+                <form id="login" class="input-group" method="POST" action="check.jsp">
+                    <input type="text" name="id" class="input-field" placeholder="User ID" required>
+                    <input type="password" name="pwd" class="input-field" placeholder="Enter Password" required>
+                    <input type="checkbox" class="check-box"><span class="check-text">Remember Password</span>
+                    <button type="submit" class="submit-btn">Log in</button>
+                </form>
+                <form id="signup" class="input-group" method="POST" action="new_user.jsp">
+                    <input type="text" name="id"  class="input-field" placeholder="User ID" required>
+                    <input type="email"  name="email"  class="input-field" placeholder="Email ID" required>
+                    <input type="password" name="pwd" class="input-field" placeholder="Enter Password" required>
+                    <button type="submit" class="submit-btn sign-btn">Sign up</button>
+                </form>
+            </div>
+        </div> 
+
+        <!-- cart Modal -->
+        <div id="cartModal" class="myModal-buy-cart">
+            <div id="formBox" class="form-box-cart">
+                <h1>購物車</h1>
+                <div class="cartProduct">
+                    <div><img src="image/tianwang.jpg" class="icon-product"></div>
+                    <div><!--商品名稱-->
+                        <p>天王星</p>
+                    </div><!--金錢-->
+                    <div>
+                        <p>300萬</p>
+                    </div>
+                    <div>
+                        <span class="del-product">&times;</span>
+                    </div>
+                </div>
+                
+                <div class="checkout">
+                    <form>
+                        <button><a href="buyhistory.html">結帳</a></button>
+                    </form>
+                </div> 
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="left">
+                <a href="member.html"><p>個人檔案</p></a><br>
+                <a href="buyhistory.html"><p>訂單</p></a>
+            </div>
+            <div class="right">
+                <div>
+                   <img src="image/tianwang.jpg" class="personal-icon"> 
+                </div>
+                <div class="input">
+                    <form>
+                       <div class="input-inside">
+                           <div>
+                                <p>姓名:  <input disabled type="text" value="俊儒" name="name"> </p>
+                                <p>ID: 12345678</p>
+                                <p>電話號碼: <input disabled type="tel" value="0912345678" name="phone"></p>
+                                <p>出生年月日: <input disabled type="date" value="2021-01-01" name="birthday"></p>
+                           </div>
+                           <div>
+                            <p>暱稱:  <input disabled type="text" value="卡波" name="name"> </p>
+                            <p>密碼: <input disabled type="password" value="asdfadf" name="pwd"></p>
+                            <p>email:  <input disabled type="email" value="handsome@gmail.com" name="email"></p>
+                            <p>性別：  <input disabled type="radio" checked name="sex"> 男
+                                <input disabled type="radio" name="sex">女</p>
+                           </div>
+                       </div>
+                        
+                       <div>
+                            <input class="OK" disabled value="確認" type="submit" name="sumbit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <button class="modify" id="btn-change"  onclick="change()">修改</button>
+                       </div>
+                        
+                    </form>
+                    
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <span>Copyright © 2021 All Rights Reserved<br>
+                  Tel：0800-091-000<br>
+                  訪客人數:
+            </span>
+        </footer>
+    </div>
+
+    <script src="js/modal_LogSign.js"></script> <!-- modal box的控制 -->
+    <script src="js/LogSign.js"></script> <!-- 專為login/signup的modal box -->
+    <script> // CART delete .product block
+        var pro = document.getElementsByClassName("product") ;
+        var close = document.getElementsByClassName("close") ;
+        
+        for (var i = 0; i < close.length; i++) {
+            close[i].onclick = function() {
+                var div = pro[i] ;
+                div.remove() ;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,192 @@
+.content {
+    margin-top: 60px; /*navBar height 60px */
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    color: white
+}
+
+/* Section1 START */
+.S1 {
+    padding: 45px 0;
+    display: flex;
+}
+.S1-L {
+    width: 45%;
+}
+.S1-L > img {
+    float: right;
+    margin-right: 30px;
+    width: 300px
+}
+.S1-R {
+    width: 55%;
+}
+.S1-R > h2 {
+    letter-spacing: 5px;
+}
+.S1-R > hr {
+    margin: 10px 0;
+}
+.intro {
+    height: 220px;
+}
+.S1-R > div { /* include 2 form */
+    display: flex;
+    justify-content: center;
+}
+.S1-R > div > form > button {
+    background-color: rgba(27, 27, 27, 0.562);
+    cursor: pointer;
+    outline: none;
+    border-radius: 3px;
+    border: 2px solid #ffad06;
+    color: rgb(255, 187, 0);
+    letter-spacing: 3px;
+    padding: 8px 16px;
+    margin: 0 10px;
+    font-weight: bold;
+    transition: 0.2s ease;
+}
+.S1-R > div > form > button:hover {
+    background-color: rgba(255, 187, 0, 0.904);
+    color: black;
+}
+
+/* Section2 START */
+.S2 {
+    padding: 45px 0;
+    display: flex;
+    justify-content: center;
+}
+.bars {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    padding: 0 40px;
+}
+.bar {
+    display: flex;
+    margin: 10px 0;
+}
+.bar > p > span { /* star symbol */
+    margin-left: 2px;
+    margin-right: 10px;
+}
+.container { /* Container for bar */
+    height: 5px;
+    width:100%;
+    background-color: #444;
+    border-radius: 10px;
+    padding: 5px;
+    margin: auto;
+    /* box-shadow: 0 0 20px 9px #777; */
+}
+.rank {
+    height: 100%;
+    border-radius: 10px;
+}
+
+/* Section3 START */
+.S3 {
+    display: flex;
+    flex-direction: column;
+    padding: 45px 0;
+}
+.write-box {
+    background: rgba(27, 27, 27, 0.562);
+    box-shadow: rgb(255, 187, 0) 0px 0px 15px 0;
+    border-radius: 10px 10px 0 0;
+    display: flex;
+    margin-bottom: 10px;
+    overflow: hidden;
+    height: 80px;
+}
+.write-box > div:first-child {
+    width: 100px;
+    position: relative;
+}
+.write-box > div:first-child > img {
+    position: absolute;
+    top: 15px;
+    left: 25px;
+    width: 50px;
+}
+.write-box > div:nth-child(2) {
+    margin: auto 0;
+    width: 100%;
+}
+.cmnt-block {
+    display: flex;
+}
+.myComment {
+    width: 100%;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 1px solid rgb(255, 187, 0);
+    outline: none;
+    background: transparent;
+    color: #fff;
+}
+.cmnt-btn {
+    display: flex; 
+    justify-content: center;
+    color: rgb(255, 187, 0);
+    outline: none;
+    cursor: pointer;
+    border: 1px solid;
+    border-radius: 5px;
+    background-color: transparent;
+    width: 100px;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 5px 10px;
+    margin: 0 20px;
+    transition: 0.2s ease;
+}
+.cmnt-btn:hover {
+    background-color: rgba(255, 187, 0, 0.904);
+    color: black;
+}
+.S3 > hr {
+    height: 5px;
+    color: rgba(68, 68, 68, 0.479);
+    border: 0;
+    border-radius: 5px;
+    box-shadow: rgb(255, 255, 0) 0px 0px 15px 0;
+}
+.message-box {
+    background: rgba(68, 68, 68, 0.479);
+    box-shadow: rgb(255, 187, 0) 0px 0px 15px 0;
+    border-radius: 10px;
+    display: flex;
+    margin: 10px 0;
+    height: 150px;
+    overflow: hidden;
+}
+.message-box > div:first-child {
+    width: 100px;
+    position: relative;
+}
+.message-box > div:first-child > img {
+    position: absolute;
+    top: 30px;
+    left: 25px;
+    width: 50px;
+}
+.message-box > div:nth-child(2) {
+    margin: auto 0;
+    width: 80%;
+}
+.comment { /* other user's comment */
+    height: 50px;
+}
+.message-box > div:nth-child(3) {
+    padding-top: 10px;
+}
+.heart {
+    font-size: 40px;
+    cursor: pointer;
+    color: whitesmoke;
+}

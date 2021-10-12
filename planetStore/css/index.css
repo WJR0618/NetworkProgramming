@@ -1,0 +1,134 @@
+.content {
+    margin-top: 60px; /*navBar height 60px */
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    color: white
+}
+.S1 {
+  padding: 40px 0;
+}
+
+/* carousel */
+.my-card > img {
+  width: 300px;
+}
+.card-carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+.card-carousel > .my-card {
+  height: 20rem;
+  position: relative;
+  z-index: 1;
+  -webkit-transform: scale(0.6) translateY(-2rem);
+  transform: scale(0.6) translateY(-2rem);
+  opacity: 0;
+  cursor: pointer;
+  pointer-events: none;
+  transition: 1s;
+}
+
+.card-carousel > .my-card.active {
+  z-index: 3;
+  -webkit-transform: scale(1) translateY(0) translateX(0);
+  transform: scale(1) translateY(0) translateX(0);
+  opacity: 1;
+  pointer-events: auto;
+  transition: 1s;
+}
+
+.card-carousel > .my-card.prev, .card-carousel > .my-card.next {
+  z-index: 2;
+  -webkit-transform: scale(0.8) translateY(-1rem) translateX(0);
+  transform: scale(0.8) translateY(-1rem) translateX(0);
+  opacity: 1;
+  pointer-events: auto;
+  transition: 1s;
+}
+
+/* Section2 START */
+.S2 {
+  padding: 40px 0;
+}
+.tabs { /* Style tabs section */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+}
+/* Style tab links */
+.tablink {
+  color: white;
+  outline: none;
+  cursor: pointer;
+  width: 25%;
+  border: 1px solid;
+  border-radius: 5px;
+  background-color: transparent;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 10px 20px;
+  margin: 0 20px;
+  transition: 0.2s ease;
+}
+.L {color: #4cc9f0;}
+.M {color: orange;}
+.R {color: #b9e769;}
+.tablink:hover {
+  color: white;
+  border: 0;
+}
+.L:hover {
+  background-color: #4ccaf0be;
+  -webkit-box-shadow: 10px 10px 99px 6px rgba(76,201,240,1);
+  -moz-box-shadow: 10px 10px 99px 6px rgba(76,201,240,1);
+  box-shadow: 10px 10px 99px 6px rgba(76,201,240,1);
+}
+.M:hover {
+  background-color: rgba(255, 166, 0, 0.726);
+  -webkit-box-shadow: 10px 10px 99px 6px orange;
+  -moz-box-shadow: 10px 10px 99px 6px orange;
+  box-shadow: 10px 10px 99px 6px orange;
+}
+.R:hover {
+  background-color: #b9e769b2;
+  -webkit-box-shadow: 10px 10px 99px 6px rgba(185, 231, 105, 1);
+  -moz-box-shadow: 10px 10px 99px 6px rgba(185, 231, 105, 1);
+  box-shadow: 10px 10px 99px 6px rgba(185, 231, 105, 1);
+}
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+  color: white;
+  display: none;
+  padding: 60px 20px;
+  border-radius: 5px;
+  height: 100%;
+  transition: 0.2s ease;
+}
+#Home {background-color: #53d7ff1a;}
+#News {background-color: rgba(255, 166, 0, 0.11);}
+#Contact {background-color: #b9e76911;}
+
+/* 開始個別商品的調整 */
+.row {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+.product {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+}
+.product-img > a > img {
+  width: 250px;
+}
+.product-text, .product-price{
+  font-size: 18px;
+}

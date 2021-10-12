@@ -1,0 +1,325 @@
+@import url(//fonts.googleapis.com/earlyaccess/notosanstc.css);
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    height: 100%;
+    max-height: 100%;
+    overflow: hidden;
+    background-image: url('../image/universe.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;  
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Noto Sans TC', sans-serif;
+}
+
+/* Navigation Bar start */
+.navBar {
+    position: fixed;
+    width: 90%;
+    z-index: 8;
+}
+
+.navBar > ul {
+    list-style-type: none;
+    overflow: hidden;
+    background-color: transparent;
+}
+
+.navBar > ul > li {
+    float: right;
+    transition: 0.2s;
+}
+
+.navBar > ul > li:first-child {
+    float: left;
+}
+
+.navBar > ul > li > a {
+    display: block;
+    cursor: pointer;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 22px; /* logo only */
+    color: white;
+    transition: 0.2s ease;
+}
+
+.navBar > ul > li:first-child > a { /* logo */
+    color: #fffbf4;
+    text-shadow: 0px 0px 8px #ffad06;
+}
+
+.navBar > ul > li:nth-child(2) > a:hover { /* 頭像 */ 
+    transform: scale(1.2);
+}
+
+.navBar > ul > li > a:hover {
+    color: #fffbf4;
+    text-shadow: 0px 0px 8px #ffad06;
+}
+
+.icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    font-size: 27px;
+}
+/* Navigation Bar end */
+
+/* search */
+.search-box {
+    position: relative;
+    height: 80%;
+    border-radius: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 10px;
+}
+.search-box:hover > .search-txt {
+    width: 240px;
+    padding: 0 6px;
+    background: #151618ce;
+}
+.search-box:hover {
+    background: #151618ce;
+}
+.search-box:hover > .search-btn {
+    background: rgba(255, 218, 98, 0.932);
+}
+.search-btn {
+    float: right;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+}
+.search-txt {
+    border: none;
+    background: none;
+    outline: none;
+    float: left;
+    padding: 0;
+    color: white;
+    font-size: 16px;
+    transition: 0.4s;
+    width: 0px;
+}
+
+
+
+/* (Log in / Sign up) Modal START */
+#logSignModalBtn {
+    cursor: pointer;
+}
+.form-box {
+    width: 380px;
+    height: 380px;
+    position: relative;
+    margin: 6% auto;
+    background: #222;
+    padding: 5px;
+    overflow: hidden;
+}
+.button-box {
+    width: 220px;
+    margin: 35px auto;
+    position: relative;
+    box-shadow: 0 0 20px 9px #ff61241f;
+    border-radius: 30px;
+}
+.toggle-btn {
+    padding: 10px 30px;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    outline: none;
+    position: relative;
+    font-weight: bold;
+    transition: 0.5s;
+}
+#toggle-btnL {
+    color: #111;
+}
+#toggle-btnR {
+    color: #999;
+}
+#btn { /* login or signout button*/
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 110px;
+    height: 100%;
+    background: linear-gradient(to right, #ff105f, #ffad06);
+    border-radius: 30px;
+    transition: 0.5s;
+}
+.input-group {
+    top: 140px;
+    position: absolute;
+    width: 280px;
+    transition: 0.5s;
+}
+.input-field {
+    width: 100%;
+    padding: 10px 0;
+    margin: 5px 0;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 1px solid #999;
+    outline: none;
+    background: transparent;
+    color: #fff;
+}
+.submit-btn {
+    width: 85%;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    background: linear-gradient(to right, #ff105f, #ffad06);
+    border: 0;
+    outline: none;
+    border-radius: 30px;
+    font-weight: bold;
+}
+.sign-btn {
+    /* sign up button 自己微調 */
+    margin-top: 30px;
+}
+.check-box {
+    margin: 30px 10px 30px 0;
+}
+.check-text {
+    color: #888;
+    font-size: 12px;
+    bottom: 64px;
+    position: absolute;
+}
+#login {
+    left: 50px;
+}
+#signup {
+    left: 450px;
+}
+#close {
+    color: #aaa;
+    position: absolute;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+}
+#close:hover,
+#close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+/* (Log in / Sign up) Modal END */
+
+/* cart Modal START */
+::-webkit-scrollbar {
+    /*隱藏滾輪*/
+    display: none;
+}
+
+.myModal-buy-cart {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 9; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+.form-box-cart {
+    text-align: center;
+    width: 500px;
+    height: 600px;
+    position: relative;
+    margin: 6% auto;
+    background: #222;
+    padding: 5px;
+    overflow: hidden;
+    color: white;
+}
+
+.icon-product { /* 小圖*/
+    width: 50px;
+    height: 50px;
+}
+.cartProduct{
+    position: relative;
+    width: 500px;
+    display: flex;
+    align-items: center;
+   
+}
+.cartProduct > div:nth-child(1) {
+    height: 50px;
+    align-items: center;
+}
+.cartProduct > div:nth-child(2) {
+    height: 50px;
+    width: 260px;
+    align-items: center;
+}
+
+.cartProduct > div:nth-child(3) {
+    height: 50px;
+    width: 140px;
+    align-items: center;
+}
+.cartProduct > div:nth-child(4) {
+    height: 50px;
+    width: 40px;
+    
+    align-items: center;
+}
+.del-product {
+    color: #aaa;
+    position: absolute;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.checkout{
+    position: absolute;
+    right: 50px;
+    bottom: 30px;
+    align-items: flex-end;
+}
+.checkout > form > button {
+    background-color: gray;
+    height: 40px;
+    width: 64px;
+}
+/* cart Modal END */
+
+.footer {
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer > span {
+    color: white;
+    text-align: center;
+    font-size: 14px;
+}

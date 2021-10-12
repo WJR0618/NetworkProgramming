@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>星球販賣所</title>
+    <link rel="stylesheet" href="css/main.css"> <!-- navBar & footer-->
+    <link rel="stylesheet" href="css/product.css">
+    <style> /* rank width */
+        .five {
+            width: 0%; 
+            background: #e6ffe6;
+            box-shadow: #0f0 0px 0px 20px 0px;
+            animation: five 2s ease forwards;
+        }
+        @keyframes five {
+            to {
+                width: 90%;
+            }
+        }
+        .four {
+            width: 0; 
+            background: #ffffe6;
+            box-shadow: #ff0 0px 0px 20px 0px;
+            animation: four 2s ease forwards;
+        }
+        @keyframes four {
+            to {
+                width: 60%;
+            }
+        }
+        .three {
+            width: 0; 
+            background-color: #ffe6e6;
+            box-shadow:#f00 0px 0px 20px 0px;
+            animation: three 2s ease forwards;
+        }
+        @keyframes three {
+            to {
+                width: 40%;
+            }
+        }
+        .two {
+            width: 0;
+            background-color: #ccf7ff;
+            box-shadow: #4df 0px 0px 20px 0px;
+            animation: two 2s ease forwards;
+        }
+        @keyframes two {
+            to {
+                width: 10%;
+            }
+        }
+        .one {
+            width: 0;
+            background: #f2e6f2;
+            box-shadow: purple 0px 0px 20px 0px;
+            animation: one 2s ease forwards;
+        }
+        @keyframes one {
+            to {
+                width: 5%;
+            }
+        }
+    </style>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script> <!--符號引用-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script> // CART add .product block
+        var test = '<div class="cartProduct"> \
+                <div> \
+                    <img src="image/tianwang.jpg" class="icon-product"> \
+                </div> \
+                <div> \
+                    <p>天王星</p> \
+                </div> \
+                <div> \
+                    <p>300萬</p> \
+                </div> \
+                <div> \
+                    <span class="del-product">&times</span> \
+                </div> \
+            </div>' ;
+       
+        $(document).ready(function(){
+            $("#add").click(function(event){ 
+                $("#formBox").append( test ); 
+                event.preventDefault() ;
+            })
+        });
+    </script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="navBar">
+            <ul>
+                <li><a href="index.html">星球販賣所</a></li>
+                <li><a id="logSignModalBtn"><img class="icon" src='image/tianwang.jpg'></a></li> <!-- 登入後id改href="self.html"-->
+                <li><a id="cartModalBtn"><i class="icon fas fa-shopping-cart"></i></a></li>
+                <li class="search-box">
+                    <input class="search-txt" type="text" name="" placeholder="Type to search">
+                    <a class="search-btn" href="#"><i class="icon fa fa-search"></i></a>
+                </li>
+                <li><a href="intro.html">Contact Us</a></li>
+            </ul>
+        </div>
+
+        <!-- (Log in / Sign up) Modal -->
+        <div id="logSignModal" class="modal">
+            <!-- Modal content -->
+            <div class="form-box">
+                <span id="close">&times;</span>
+                <div class="button-box">
+                    <div id="btn"></div>
+                    <button type="button" id="toggle-btnL" class="toggle-btn" onclick="login()">Log in</button>
+                    <button type="button" id="toggle-btnR" class="toggle-btn" onclick="signup()">Sign up</button>
+                </div>
+                <form id="login" class="input-group" method="POST" action="check.jsp">
+                    <input type="text" name="id" class="input-field" placeholder="User ID" required>
+                    <input type="password" name="pwd" class="input-field" placeholder="Enter Password" required>
+                    <input type="checkbox" class="check-box"><span class="check-text">Remember Password</span>
+                    <button type="submit" class="submit-btn">Log in</button>
+                </form>
+                <form id="signup" class="input-group" method="POST" action="new_user.jsp">
+                    <input type="text" name="id"  class="input-field" placeholder="User ID" required>
+                    <input type="email"  name="email"  class="input-field" placeholder="Email ID" required>
+                    <input type="password" name="pwd" class="input-field" placeholder="Enter Password" required>
+                    <button type="submit" class="submit-btn sign-btn">Sign up</button>
+                </form>
+            </div>
+        </div> 
+
+        <!-- cart Modal -->
+        <div id="cartModal" class="myModal-buy-cart">
+            <div id="formBox" class="form-box-cart">
+                <h1>購物車</h1>
+                <div class="cartProduct">
+                    <div><img src="image/tianwang.jpg" class="icon-product"></div>
+                    <div><!--商品名稱-->
+                        <p>天王星</p>
+                    </div><!--金錢-->
+                    <div>
+                        <p>300萬</p>
+                    </div>
+                    <div>
+                        <span class="del-product">&times;</span>
+                    </div>
+                </div>
+                
+                <div class="checkout">
+                    <form>
+                        <button><a href="buyhistory.html">結帳</a></button>
+                    </form>
+                </div> 
+            </div>
+        </div>
+
+        <div class="content">
+            <section class="S1">
+                <div class="S1-L">
+                    <img src="image/tianwang.jpg">
+                </div>
+                <div class="S1-R">
+                    <h2>天王星</h2>
+                    <hr>
+                    <p class="intro">(介紹)</p>
+                    <p>價格：</p>
+                    <p>數量：1</p>
+                    <hr>
+                    <div>
+                        <form>
+                            <button type="button" id="cartModalBtn">加入購物車</button>
+                        </form>
+                        <form action="">
+                            <button>直接購買</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+            <section class="S2">
+                <div class="bars">
+                    <div class="bar">
+                        <p>5<span>&#11088;</span></p>
+                        <div class="container">
+                          <div class="rank five"></div>
+                        </div>
+                    </div>
+                
+                    <div class="bar">
+                        <p>4<span>&#11088;</span></p>
+                        <div class="container">
+                          <div class="rank four"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="bar">
+                        <p>3<span>&#11088;</span></p>
+                        <div class="container">
+                          <div class="rank three"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="bar">
+                        <p>2<span>&#11088;</span></p>
+                        <div class="container">
+                          <div class="rank two"></div>
+                        </div>
+                    </div>
+    
+                    <div class="bar">
+                        <p>1<span>&#11088;</span></p>
+                        <div class="container">
+                          <div class="rank one"></div>
+                        </div>
+                    </div>
+                </div> <!-- class="bar" -->
+            </section>
+
+            <section class="S3">
+                <form class="write-box">
+                    <div><img src="image/tianwang.jpg"></div>
+                    <div>
+                        <div class="write-stars">&#11088;&#11088;&#11088;</div>
+                        <div class="cmnt-block">
+                            <input type="text" name="myComment" class="myComment" placeholder="寫下評論" required>
+                            <button class="cmnt-btn" type="submit">送出</button>
+                        </div>
+                    </div>
+                </form>
+                <hr>
+                <div class="message-box">
+                    <div><img src="image/tianwang.jpg"></div>
+                    <div>
+                        <h6>Anny</h6>
+                        <div class="stars">&#11088;&#11088;&#11088;&#11088;&#11088;</div>
+                        <p class="comment">blahblah</p>
+                        <p>2021-01-18</p>
+                    </div>
+                    <div><span class="heart">&hearts;</span></div>
+                </div>
+                <div class="message-box">
+                    <div><img src="image/tianwang.jpg"></div>
+                    <div>
+                        <h6>Anny</h6>
+                        <div class="stars">&#11088;&#11088;&#11088;&#11088;&#11088;</div>
+                        <p class="comment">blahblah</p>
+                        <p>2021-01-18</p>
+                    </div>
+                    <div><span class="heart">&hearts;</span></div>
+                </div>
+            </section>
+        </div>
+
+        <footer class="footer">
+            <span>Copyright © 2021 All Rights Reserved<br>
+                  Tel：0800-091-000<br>
+                  訪客人數:
+            </span>
+        </footer>
+    </div>
+
+    <script src="js/modal_LogSign.js"></script> <!-- modal box的控制 -->
+    <script src="js/LogSign.js"></script> <!-- 專為login/signup的modal box -->
+    <script> // CART delete .product block
+        var pro = document.getElementsByClassName("product") ;
+        var close = document.getElementsByClassName("close") ;
+        
+        for (var i = 0; i < close.length; i++) {
+            close[i].onclick = function() {
+                var div = pro[i] ;
+                div.remove() ;
+            }
+        }
+    </script>
+</body>
+</html>
